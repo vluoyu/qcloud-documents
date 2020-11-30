@@ -98,6 +98,23 @@ Container 节点 Operation 的内容：
 | DocProcessResult   | Response.JobsDetail.Operation | 在 job 的类型为 DocProcess 且 job 状态为 success 时，返回文档预览任务结果详情 | Container |
 | Output             | Response.JobsDetail.Operation | 结果输出地址，同 [CreateDocProcessJobs](https://cloud.tencent.com/document/product/460/46942#.E8.AF.B7.E6.B1.82) 接口的 Request.Operation.Output 节点 | Container |
 
+Container 节点 DocProcessResult 节点的内容
+| 节点名称（关键字） | 父节点                        | 描述                                                         | 类型      |
+| :----------------- | :---------------------------- | :----------------------------------------------------------- | :-------- |
+| PageInfo           | Response.JobsDetail.Operation.DocProcessResult | 预览任务产物详情 | Container |
+| TgtType           | Response.JobsDetail.Operation.DocProcessResult | 预览产物目标格式 | string |
+| TotalPageCount     | Response.JobsDetail.Operation.DocProcessResult | 预览任务产物的总数 | int |
+| SuccPageCount      | Response.JobsDetail.Operation.DocProcessResult | 预览任务产物的成功数 | int |
+| FailPageCount      | Response.JobsDetail.Operation.DocProcessResult | 预览任务产物的失败数 | int |
+| TotalSheetCount     | Response.JobsDetail.Operation.DocProcessResult | 预览任务的Sheet总数（源文件为Excel特有参数） | int |
+
+Container 节点 PageInfo 节点的内容
+| 节点名称（关键字） | 父节点                        | 描述                                                         | 类型      |
+| :----------------- | :---------------------------- | :----------------------------------------------------------- | :-------- |
+| PageNo           | Response.JobsDetail.Operation.DocProcessResult.PageInfo | 预览产物页码,源文件为Excel格式时表示SheetId | Container |
+| TgtUri     | Response.JobsDetail.Operation.DocProcessResult.PageInfo | 预览产物生成的cos桶路径 | int |
+| X-SheetPics      | Response.JobsDetail.Operation.DocProcessResult.PageInfo | 当前Sheet生成的图片总数（源文件为Excel特有参数） | int |
+
 #### 错误码
 
 该请求操作无特殊错误信息，常见的错误信息请参见 [错误码](https://cloud.tencent.com/document/product/460/42867) 文档。
