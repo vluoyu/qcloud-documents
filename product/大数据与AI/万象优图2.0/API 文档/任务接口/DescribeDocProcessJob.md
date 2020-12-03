@@ -133,7 +133,7 @@ Authorization:q-sign-algorithm=sha1&q-ak=AKIDZfbOAo7cllgPvF9cXFrJD0a1ICvR****&q-
 Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
 ```
 
-#### 响应
+#### 1.非Excel文档请求响应
 
 ```shell
 <Response>
@@ -172,6 +172,68 @@ Host: examplebucket-1250000000.ci.ap-beijing.myqcloud.com
                         </Output>
                 </Operation>
                 <QueueId>p50882922b848464fadd222d771438328</QueueId>
+                <State>Success</State>
+                <Tag>DocProcess</Tag>
+        </JobsDetail>
+</Response>
+```
+
+### 2. Excel格式响应
+```
+<Response>
+        <JobsDetail>
+                <Code>Success</Code>
+                <CreationTime>2020-12-03T19:54:10+0800</CreationTime>
+                <EndTime>2020-12-03T19:54:13+0800</EndTime>
+                <Input>
+                        <Object>1.xlsx</Object>
+                </Input>
+                <JobId>d13cfd584cd9011ea820b597ad1785a2f</JobId>
+                <Message/>
+                <Operation>
+                        <DocProcess>
+                                <Comments>0</Comments>
+                                <DocPassword/>
+                                <EndPage>2</EndPage>
+                                <ImageParams/>
+                                <PaperDirection>0</PaperDirection>
+                                <PaperSize>0</PaperSize>
+                                <Quality>100</Quality>
+                                <SheetId>0</SheetId>
+                                <SrcType/>
+                                <StartPage>1</StartPage>
+                                <TgtType/>
+                                <Zoom>100</Zoom>
+                        </DocProcess>
+                        <DocProcessResult>
+                                <FailPageCount>0</FailPageCount>
+                                <PageInfo>
+                                        <PageNo>1</PageNo>
+                                        <PicIndex>1</PicIndex>
+                                        <PicNum>1</PicNum>
+                                        <TgtUri>mark2/1/test-1.jpg</TgtUri>
+                                        <X-SheetPics>2</X-SheetPics>
+                                </PageInfo>
+                                <PageInfo>
+                                        <PageNo>1</PageNo>
+                                        <PicIndex>2</PicIndex>
+                                        <PicNum>2</PicNum>
+                                        <TgtUri>mark2/1/test-2.jpg</TgtUri>
+                                        <X-SheetPics>2</X-SheetPics>
+                                </PageInfo>
+                                <SuccPageCount>6</SuccPageCount>
+                                <TaskId/>
+                                <TgtType/>
+                                <TotalPageCount>6</TotalPageCount>
+                                <TotalSheetCount>3</TotalSheetCount>
+                        </DocProcessResult>
+                        <Output>
+                                <Bucket>markjrzhang-1251704708</Bucket>
+                                <Object>mark/${SheetID}/pic-${Page}.jpg</Object>
+                                <Region>ap-chongqing</Region>
+                        </Output>
+                </Operation>
+                <QueueId>p5fdbba9a9b83479f84538d5beb*****</QueueId>
                 <State>Success</State>
                 <Tag>DocProcess</Tag>
         </JobsDetail>
