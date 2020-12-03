@@ -114,6 +114,8 @@ Container 节点 PageInfo 节点的内容
 | PageNo           | Response.JobsDetail.Operation.DocProcessResult.PageInfo | 预览产物页码,源文件为Excel格式时表示SheetId | Container |
 | TgtUri     | Response.JobsDetail.Operation.DocProcessResult.PageInfo | 预览产物生成的cos桶路径 | int |
 | X-SheetPics      | Response.JobsDetail.Operation.DocProcessResult.PageInfo | 当前Sheet生成的图片总数（源文件为Excel特有参数） | int |
+| PicIndex      | Response.JobsDetail.Operation.DocProcessResult.PageInfo | 当前预览产物在整个源文件中的序号（源文件为Excel特有参数） | int |
+| PicNum      | Response.JobsDetail.Operation.DocProcessResult.PageInfo | 当前预览产物在Sheet中的序号（源文件为Excel特有参数） | int |
 
 #### 错误码
 
